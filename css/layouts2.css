@@ -1,0 +1,283 @@
+/* ==========================================
+   Variáveis CSS e Reset
+   ========================================== */
+:root {
+    --color-light: #f1f1f1;
+    --color-dark: #1a1a1a;
+    --color-green-100: rgb(87, 151, 28);
+    --color-green-800: rgb(4, 42, 13);
+    --radius: 8px;
+    --gradient: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300; /* Light */
+    background-color: #ffffff;
+    color: var(--color-dark);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 900; /* Black/Bold */
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-light);
+    transition: all 0.3s ease;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+span {
+    color: var(--color-green-100);
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero {
+    width: 100%;
+    min-height: 80vh; /* Ajustado para melhor visualização */
+    padding: 4rem;
+    background-image: var(--gradient), url(../images/banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: clamp(2.4rem, 3vw, 4rem);
+    letter-spacing: 1px;
+}
+
+.header-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.item-menu i {
+    font-size: 2.2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.item-menu:hover i {
+    color: var(--color-green-100);
+    transform: translateY(-3px);
+}
+
+.header-footer h2 {
+    font-size: clamp(2rem, 2.5vw, 3.5rem);
+    margin-bottom: 2rem;
+}
+
+.header-grid {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.header-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém proporção igual para todas */
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    filter: grayscale(1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.header-grid img:hover {
+    filter: grayscale(0);
+    border-color: var(--color-green-100);
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   Main: Soluções Energéticas
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 4rem;
+}
+
+.titles {
+    font-size: clamp(3rem, 4vw, 4.5rem);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+.energy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.energy-grid-item {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden; /* Crucial para o hover não vazar das bordas */
+    display: block;
+    aspect-ratio: 4 / 3; /* Altura e largura consistentes */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.energy-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz as imagens preencherem o card perfeitamente */
+    filter: grayscale(0.8);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Gradiente escuro para garantir leitura do texto */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+}
+
+.energy-grid-item p {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: var(--color-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+    z-index: 2;
+    transition: letter-spacing 0.4s ease, color 0.4s ease;
+}
+
+.energy-grid-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.energy-grid-item:hover p {
+    letter-spacing: 2px;
+    color: var(--color-green-100);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.footer-page {
+    margin-top: 8rem;
+    padding: 5rem 4rem;
+    color: var(--color-light);
+    background-color: var(--color-green-800);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer-brand h2 {
+    font-size: clamp(3rem, 4vw, 4rem);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand h4 {
+    font-weight: 400;
+    font-size: 1.6rem;
+    opacity: 0.8;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-socials i {
+    color: var(--color-light);
+    font-size: 2.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover i {
+    color: var(--color-green-100);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* ==========================================
+   Responsividade (Media Queries)
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .energy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero {
+        padding: 3rem 2rem;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .header-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .energy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-page {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
