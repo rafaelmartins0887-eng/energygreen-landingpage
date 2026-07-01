@@ -13,8 +13,3 @@ Este layout foi estruturado como aplicação prática de Front-end para o curso 
 ##  Tecnologias Utilizadas
 *   **HTML5:** Estruturação semântica e organização de blocos de conteúdo.
 *   **CSS3:** Estilização em cascata, alinhamento avançado e responsividade visual.
-
-## Como executar o projeto
-1. Faça o clone deste repositório:
-   `git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git`
-2. Abra a pasta clonada e dê um duplo clique no arquivo HTML principal (ex: `index.html`) para abri-lo diretamente no seu navegador web.
